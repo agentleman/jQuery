@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3动画</title>
+</head>
+<body>
+	<!-- <div class="square">
+		<div class="center"></div>
+	</div> -->
+	<!-- <div class="main">
+	     <h2 class="title">目录</h2>
+	     <label class="zhezao" for="check"></label>
+	    <input id="check" type="checkbox"></input>	
+		<ul>
+			<li>小虎队</li>
+			<li>凤凰传奇</li>
+			<li>筷子兄弟</li>
+		</ul>
+	</div> -->
+	<div class="che"></div>
+	<div class="guidao"><div class="nei"></div></div>
+</body>
+<style type="text/css">
+    .title{
+    	line-height: 50px;
+    	width: 202px;
+    	height: 50px;
+    }
+    .main{
+    	width: 202px;
+    	height: 300px;
+    	background:#eee;
+    	text-align: center;
+    	position: relative;
+    }
+    input{
+    	display: none;
+    }
+    label{
+    	width: 202px;
+    	height: 50px;
+    	opacity: 0.5;
+    	background: orange;
+        position: absolute;
+        top: 0px;
+        left:0px;
+    }
+    ul,li,h2,input,body,div{
+    	list-style:none;
+    	margin: 0;
+    	padding: 0;
+    }
+    ul{
+    	background-image: linear-gradient(green,red,blue);
+    	width: 202px;
+    	height:0px; 
+    	transition: all 1s ease;
+    }
+    li{
+    	width: 200px;
+    	height: 50px;
+    	background: red;
+    	border:1px solid green;
+    	transform:translateX(-100%);
+        text-align: center;
+        line-height: 50px;  	
+    }
+    input:checked + ul{
+    	height: 200px;
+    }
+    input:checked + ul li{
+    	transition: all 1s ease ;
+    	 transform:translateX(0);
+    }
+    input:checked + ul li:nth-child(1){
+       transition-delay: .5s;
+      
+    }
+    input:checked + ul li:nth-child(2){
+    	transition-delay: 1s;
+    }
+    input:checked + ul li:nth-child(3){
+    	transition-delay: 1.5s;
+    }
+    .nei{
+    	width: 800px;
+    	height:400px;
+    	border: 3px solid black;
+    	border-radius: 50px;
+    }
+    .guidao{
+    	width: 800px;
+    	height: 400px;
+    	border: 3px solid black;
+    	position: absolute;
+    	top: 50px;
+    	left: 100px;
+    	padding: 10px;
+    	border-radius: 50px;
+    }
+    .che{
+    	width: 200px;
+    	height:80px;
+    	border:  20px solid  #666;
+    	border-top-right-radius: 250px; 
+    	background: orange;
+    	animation: pao 6s linear;
+    	animation-direction:reverse;
+    	/*动画停留在100%状态*/
+    	animation-fill-mode: forwards;
+    	animation-play-state: paused;
+    	animation-delay: 3s;
+    	animation-name: pao;
+    	animation-duration: 5s;
+    	animation:pao 3s ease /*infinite*/ forwards 1s;
+    	/* 动画名称pao 动画时长3s 动画方式ease infinite动画连续执行 动画方向 向前forwards 向后reverse 动画延迟时间1s */
+    }
+    @keyframes  pao{
+    	100%,0%{
+    		transform: translate3d(0,0,0);
+    	}
+    	25%{
+    		transform: translate3d(800px,0,0);
+    	}
+    	29%{
+    		transform: translate3d(800px,0,0) rotateZ(90deg);
+    		
+    	}
+    	50%{
+    		transform: translate3d(800px,400px,0) rotateZ(90deg);
+    	}
+    	55%{
+    		transform: translate3d(800px,400px,0) rotateY(180deg);
+    		
+    	}
+    	75%{
+    		transform: translate3d(0,400px,0) rotateY(180deg);
+    	}
+    	78%{
+    		transform: translate3d(0,400px,0) rotateZ(-90deg);
+    		
+    	}
+    	99%{
+            transform: translate3d(0,0,0) rotateZ(-90deg)
+    	}
+
+  }
+
+    .center{
+    	width: 80px;
+    	height: 80px;
+    	background-image: yellow;
+    }
+	.square{
+		margin: 100px  auto;
+		width: 300px;
+		height: 300px;
+		border:2px dashed green;
+		opacity: 0.7;
+		background-image: url(../jQuery/image/1020.jpg);
+		/*background-image: linear-gradient(green,red,blue);*/
+		/*transition: width 2s ease 0s,
+		            height 2s ease 0s;*/
+		transition: all 2s ease;
+		transition-timing-function: cubic-bezier(0.03, 0.94, 1,-0.04)
+	}
+	.square:hover{
+		/*width:50px;
+		height: 50px;*/
+		transform-origin: center center;
+		/*border-radius: 50%;*/
+
+		/*旋转*/
+		transform: rotateY(4000deg);	
+		/*transform: rotateZ(3650deg);*/
+		/*transform: rotate3d(390deg,390deg,390deg);*/
+
+		/*缩放*/
+		transform: scale(2,2);
+		
+		/*平移*/
+		/*transform: translateX(-100%);*/
+		/*transform: translate(-50%,-50%);*/
+		/*transform: translate3d();*/
+		/*斜切*/
+		/*transform: skewX(45deg);*/
+		/*transform: skewY();*/
+		/*transform: skew(45deg,100deg);*/
+	}
+</style>
+</html>
