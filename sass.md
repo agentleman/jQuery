@@ -49,3 +49,13 @@ transform:scale(缩放)  rotate(旋转)  translate(平移)
      color:$coor;
   }
   }
+@each $colors in map-keys{
+  $color:map-get($liebiao,$name);
+  .lable.lable-#($name){
+  border:1px solid $color;
+  &:hover{
+  background:$bg;
+  color:$color;
+}
+}
+}
