@@ -20,6 +20,7 @@ $(function(){
 //    .removeClass('active')
 //    .eq($(this).index()).addClass('active')
 // })
+
 $.fn.xuanxiangka=function(op){
    var option={
       title:'.title li',
